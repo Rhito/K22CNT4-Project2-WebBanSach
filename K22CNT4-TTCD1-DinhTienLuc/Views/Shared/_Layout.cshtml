@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách Việt Nam</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="shortcut icon" href="~/Content/Images/sachLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Content/Css/main.css" />
+    <link rel="stylesheet" href="~/Content/Css/footer.css" />
+    <script defer src="~/Scripts/MainJS/main.js"></script>
+
+    @*Swiper slider*@
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
+        <div class="container">
+            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
+                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
+                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Loại sách", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Liên hệ", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-light d-flex align-items-center">
+                <div class="container">
+                    <form class="d-flex">
+                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
+                        <div class="header-icons dropdown d-flex align-items-center">
+                            <i class="fa-regular fa-user mx-3 fh4"></i>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                @*<li><a class="dropdown-item" href="#">User</a></li>
+                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li> *@
+                            </ul>
+                        </div>
+                        <a class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span class="numBooksInCart">1</span></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="first-footer d-flex">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-5 col-12 first-col">
+                        <a href="/">
+                            <img src="~/Content/Images/sachLogo.png" class="logo" alt="Sách">
+                            <span>Nâng cao tri thức của bạn</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot footer-icon"></i>
+                                <a href="mailto: lasnguyen06@gmail.com">lasnguyen06@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope footer-icon"></i>
+                                <a class="phone" href="tel:0372657743">
+                                    0372657743
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <h4 class="title-menu fh4">
+                            <span>
+                                Giới thiệu
+                            </span>
+                        </h4>
+                        <ul class="list-menu">
+                            <li class="li_menu"><a href="/gioi-thieu" title="Về Nhã Nam">Về Sách</a></li>
+                            <li class="li_menu"><a href="/he-thong-hieu-sach" title="Hệ thống hiệu sách">Hệ thống hiệu sách</a></li>
+                            <li class="li_menu"><a href="/he-thong-cua-hang" title="Hệ thống phát hành">Hệ thống phát hành</a></li>
+                            <li class="li_menu"><a href="/tuyen-dung" title="Tuyển dụng">Tuyển dụng</a></li>
+                            <li class="li_menu"><a href="/lien-he-voi-chung-toi" title="Liên hệ với chúng tôi">Liên hệ với chúng tôi</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <h4 class="title-menu fh4">
+                            <span>
+                                CHÍNH SÁCH <i class="fa fa-plus hidden" aria-hidden="true"></i>
+                            </span>
+                        </h4>
+                        <ul class="list-menu">
+                            <li class="li_menu"><a href="/chinh-sach" title="Chính sách bảo mật">Chính sách bảo mật</a></li>
+                            <li class="li_menu"><a href="/chinh-sach" title="Chính sách đổi trả/hoàn tiền">Chính sách đổi trả/hoàn tiền</a></li>
+                            <li class="li_menu"><a href="/chinh-sach" title="Chính sách thanh toán/ vận chuyển">Chính sách thanh toán/ vận chuyển</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12">
+                        <h4 class="title-menu faild fh4">
+                            <span>
+                                Phương thức thanh toán
+                            </span>
+                        </h4>
+                        <div class="payment">
+                            <img src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/payment_method.png?1724988401192" data-src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/payment_method.png?1724988401192" class="lazyload loaded" alt="Phương thức thanh toán" data-was-processed="true">
+                        </div>
+                        <div class="payment" style="margin-top:20px;">
+                            <a href="http://online.gov.vn/Home/WebDetails/2504" title="Xác nhận bộ công thương">
+                                <img src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/bocongthuong.png?1724988401192" data-src="//bizweb.dktcdn.net/100/363/455/themes/918830/assets/bocongthuong.png?1724988401192" class="lazyload loaded" alt="Đã đăng ký bộ công thương" data-was-processed="true">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
