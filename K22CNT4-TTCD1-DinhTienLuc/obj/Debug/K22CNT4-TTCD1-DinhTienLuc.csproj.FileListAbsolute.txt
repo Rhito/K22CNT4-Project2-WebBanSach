@@ -81,3 +81,5 @@ D:\ThucTapChuyenDe\K22CNT4-TTCD1-DinhTienLuc\bin\EntityFramework.dll
 D:\ThucTapChuyenDe\K22CNT4-TTCD1-DinhTienLuc\bin\EntityFramework.SqlServer.dll
 D:\ThucTapChuyenDe\K22CNT4-TTCD1-DinhTienLuc\bin\EntityFramework.xml
 D:\ThucTapChuyenDe\K22CNT4-TTCD1-DinhTienLuc\bin\EntityFramework.SqlServer.xml
+D:\ThucTapChuyenDe\K22CNT4-TTCD1-DinhTienLuc\bin\CKFinder.dll
+D:\ThucTapChuyenDe\K22CNT4-TTCD1-DinhTienLuc\bin\CKFinder.pdb

@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "VanHocHienDai";
+}
+
+@section header {
+    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
+        <div class="container">
+            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
+                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
+                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "TinTuc", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Loại sách", "Danhmuc", "DanhMucSach", new { area = "" }, new { @class = "nav-link px-3 nav-active" })
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/DanhMucSach/Danhmuc">Sách tổng hợp</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/VanHocHienDai">Văn học hiện đại</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/KinhTeHoc">Kinh tế học</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/TamLyHoc">Tâm lý học</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Liên hệ", "LienHe", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-light d-flex align-items-center">
+                <div class="container">
+                    <form class="d-flex">
+                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
+                        <div class="header-icons dropdown d-flex align-items-center">
+                            <i class="fa-regular fa-user mx-3 fh4"></i>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                @*<li><a class="dropdown-item" href="#">User</a></li>
+                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li> *@
+                            </ul>
+                        </div>
+                        <a class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span class="numBooksInCart">1</span></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+}
+@* Văn học hiện đại BOOK SECTION *@
+<section class="book-section">
+    <div class="container">
+        <div class="title-border">
+            <h2 class="title-module">
+                <a href="/Sach/Details/@item.Id" title="Văn học hiện đại">Văn học hiện đại</a>
+            </h2>
+             
+        </div>
+        @*Book slider*@
+        <div class="swiper sw">
+            <div class="swiper-wrapper slide-wrap" style=" margin-right: -8px;">
+                @foreach (var item in ViewBag.Vhhd)
+                {
+                    <div class="item_product_main swiper-slide">
+                        <form action="/Sach/Details/@item.Id" method="post" class="variants">
+                            <div class="thumb">
+                                <a class="image_thumb" href="/Sach/Details/@item.Id" title="@item.Name">
+                                    <img width="199" height="199" src="@item.Images">
+                                </a>
+                                <div class="action-cart">
+                                    <button type="button" title="Thêm vào giỏ">
+                                        <i class="fa-solid fa-cart-shopping fh4"></i>
+                                    </button>
+                                    <input type="hidden" name="variantId" value="125883119">
+                                    <button class="btn-buy btn-left btn-views  btn-buy-now-grid" title="Mua ngay">
+                                        Mua ngay
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="info-product">
+                                <h3 class="product-name"><a href="/Sach/Details/@item.Id" title="@item.Name">@item.Name</a></h3>
+
+                                <div class="price-box">
+                                    <span class="price">@item.Price.ToString("N0")₫</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+            </div>
+            <button class="swiper-button-prev prev-btn"></button>
+            <button class="swiper-button-next next-btn"></button>
+        </div>
+    </div>
+</section>
+

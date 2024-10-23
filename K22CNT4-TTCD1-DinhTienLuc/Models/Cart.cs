@@ -17,11 +17,13 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         public int Id { get; set; }
         public int IdSach { get; set; }
         public int IdUser { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<int> Quatity { get; set; }
-        public Nullable<decimal> TotalPrice { get; set; }
+        public decimal Price { get; set; }
+        public decimal TotalPrice { get; set; }
+        public string SachImages { get; set; }
+        public string TenSach { get; set; }
+        public int Quantity { get; set; }
     
-        public virtual SachTb SachTb { get; set; }
+        public virtual Sach Sach { get; set; }
         public virtual User User { get; set; }
     }
 }

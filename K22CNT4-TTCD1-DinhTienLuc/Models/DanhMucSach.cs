@@ -11,23 +11,20 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class DanhMucSach
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DanhMucSach()
         {
-            this.SachTbs = new HashSet<SachTb>();
+            this.Saches = new HashSet<Sach>();
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage ="Tên danh m?c không ???c ?? tr?ng")]
-        [StringLength(150)]
         public string Name { get; set; }
         public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SachTb> SachTbs { get; set; }
+        public virtual ICollection<Sach> Saches { get; set; }
     }
 }

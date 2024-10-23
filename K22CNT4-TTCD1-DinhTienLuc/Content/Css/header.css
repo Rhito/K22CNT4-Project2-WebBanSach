@@ -1,8 +1,8 @@
 ﻿:root {
-    --Primary-color: hsl(145, 48%, 41%) /*rgb(255, 127, 71)*/;
+    --Primary-color: hsl(145, 48%, 51%) /*rgb(255, 127, 71)*/;
 }
 body {
-    background-image: linear-gradient(to bottom right, var(--Primary-color), #cff)
+    background-image: linear-gradient(to bottom right, #333, #cff)
 }
 
 header {
@@ -32,12 +32,18 @@ header {
 }
 
 /*Dropdown menu*/
-.nav-link:hover, .dropdown-menu li:hover a, .logo:hover {
+.nav-link:hover, .dropdown-menu li:hover a,
+.logo:hover ,
+.nav-active {
+    border-radius: 5px;
+    color: hsl(145, 48%, 21%)!important;
+    text-decoration: underline;
+} /*{
     display: block;
     background-color: black;
     color: #fff !important;
     border-radius: 5px;
-}
+}*/
 
 .dropdown-menu {
     position: absolute;
@@ -167,7 +173,6 @@ header {
 }
 
 .item_blog_base .thumb {
-    width: 196px;
     overflow: hidden;
     display: block
 }
@@ -176,6 +181,7 @@ header {
     transition: all 0.5s;
     max-width: 100%;
     width: auto;
+    height: 90%;
     overflow: clip;
     object-fit: fill;
 }

@@ -15,6 +15,6 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
     public partial class Slide
     {
         public int Id { get; set; }
-        public byte[] Images { get; set; }
+        public string Images { get; set; }
     }
 }

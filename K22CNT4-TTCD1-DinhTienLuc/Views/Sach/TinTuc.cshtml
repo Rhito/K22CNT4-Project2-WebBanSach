@@ -3,5 +3,337 @@
     ViewBag.Title = "TinTuc";
 }
 
+@section header {
+    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
+        <div class="container">
+            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
+                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
+                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "TinTuc", "Sach", new { area = "" }, new { @class = "nav-link px-3 nav-active" })</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Loại sách", "Danhmuc", "DanhMucSach", new { area = "" }, new { @class = "nav-link px-3" })
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/DanhMucSach/Danhmuc">Sách tổng hợp</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/VanHocHienDai">Văn học hiện đại</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/KinhTeHoc">Kinh tế học</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/TamLyHoc">Tâm lý học</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Liên hệ", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-light d-flex align-items-center">
+                <div class="container">
+                    <form class="d-flex">
+                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
+                        <div class="header-icons dropdown d-flex align-items-center">
+                            <i class="fa-regular fa-user mx-3 fh4"></i>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                @*<li><a class="dropdown-item" href="#">User</a></li>
+                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li> *@
+                            </ul>
+                        </div>
+                        <a class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span class="numBooksInCart">1</span></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+}
 
+<div class="row">
+    <div class=" col-lg-9 col-md-12 col-12 ">
+        <h1 class="title-module fh4">Tin sách</h1>
+        <div class="row">
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/toa-dam-tieng-noi-cua-tu-lieu-ha-noi-thoi-can-dai-tu-goc-nhin-hom-nay" title="Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/website-a-nh-da-i-die-n-ba-i-vie-t-14.png?v=1728288690220" data-src="https://bizweb.dktcdn.net/100/363/455/articles/website-a-nh-da-i-die-n-ba-i-vie-t-14.png?v=1728288690220" alt="Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/toa-dam-tieng-noi-cua-tu-lieu-ha-noi-thoi-can-dai-tu-goc-nhin-hom-nay" title="Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay" class="a-title">Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay</a></h3>
+                        <span>
+                            Thứ Hai,
+                            07/10/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/toa-dam-loi-vao-the-gioi-van-chuong-cua-italo-calvino-1" title="Toạ đàm: Lối vào thế giới văn chương của Italo Calvino">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/456513921-907099581457777-879360767604344451-n.jpg?v=1724227942167" data-src="https://bizweb.dktcdn.net/100/363/455/articles/456513921-907099581457777-879360767604344451-n.jpg?v=1724227942167" alt="Toạ đàm: Lối vào thế giới văn chương của Italo Calvino" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/toa-dam-loi-vao-the-gioi-van-chuong-cua-italo-calvino-1" title="Toạ đàm: Lối vào thế giới văn chương của Italo Calvino" class="a-title">Toạ đàm: Lối vào thế giới văn chương của Italo Calvino</a></h3>
+                        <span>
+                            Thứ Tư,
+                            21/08/2024
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/sach-moi-noi-bat-thang-8" title="SÁCH MỚI NỔI BẬT THÁNG 8">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/website-1.png?v=1724218356270" data-src="https://bizweb.dktcdn.net/100/363/455/articles/website-1.png?v=1724218356270" alt="SÁCH MỚI NỔI BẬT THÁNG 8" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/sach-moi-noi-bat-thang-8" title="SÁCH MỚI NỔI BẬT THÁNG 8" class="a-title">SÁCH MỚI NỔI BẬT THÁNG 8</a></h3>
+                        <span>
+                            Thứ Tư,
+                            21/08/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/toa-dam-ngu-ngon-moi-dem-song-khoe-moi-ngay" title="Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/455754273-903613925139676-2106767521540937840-n.jpg?v=1724149695207" data-src="https://bizweb.dktcdn.net/100/363/455/articles/455754273-903613925139676-2106767521540937840-n.jpg?v=1724149695207" alt="Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/toa-dam-ngu-ngon-moi-dem-song-khoe-moi-ngay" title="Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga" class="a-title">Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga</a></h3>
+                        <span>
+                            Thứ Ba,
+                            20/08/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/su-kien-ra-mat-cuon-sach-ba-nghin-the-gioi-thom-cua-nha-nghien-cuu-nhat-chieu" title="Toạ đàm ra mắt cuốn sách Ba nghìn thế giới thơm của nhà nghiên cứu Nhật Chiêu">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/ea5657be714cd4128d5d.jpg?v=1722411769917" data-src="https://bizweb.dktcdn.net/100/363/455/articles/ea5657be714cd4128d5d.jpg?v=1722411769917" alt="Toạ đàm ra mắt cuốn sách Ba nghìn thế giới thơm của nhà nghiên cứu Nhật Chiêu" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/su-kien-ra-mat-cuon-sach-ba-nghin-the-gioi-thom-cua-nha-nghien-cuu-nhat-chieu" title="Toạ đàm ra mắt cuốn sách Ba nghìn thế giới thơm của nhà nghiên cứu Nhật Chiêu" class="a-title">Toạ đàm ra mắt cuốn sách "Ba nghìn thế giới thơm" của nhà nghiên cứu Nhật Chiêu</a></h3>
+                        <span>
+                            Thứ Tư,
+                            31/07/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/su-kien-ra-mat-cuon-sach-chip-war-cuoc-chien-vi-mach-ve-lai-ban-do-ban-dan-toan-cau-viet-nam-o-dau" title="Sự kiện ra mắt cuốn sách “Chip War - Cuộc chiến vi mạch”: Vẽ lại bản đồ bán dẫn toàn cầu: Việt Nam ở đâu?">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/pha-n-2-ca-y-cam-ngo-t-cu-a-to-i.png?v=1716798043730" data-src="https://bizweb.dktcdn.net/100/363/455/articles/pha-n-2-ca-y-cam-ngo-t-cu-a-to-i.png?v=1716798043730" alt="Sự kiện ra mắt cuốn sách “Chip War - Cuộc chiến vi mạch”: Vẽ lại bản đồ bán dẫn toàn cầu: Việt Nam ở đâu?" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/su-kien-ra-mat-cuon-sach-chip-war-cuoc-chien-vi-mach-ve-lai-ban-do-ban-dan-toan-cau-viet-nam-o-dau" title="Sự kiện ra mắt cuốn sách “Chip War - Cuộc chiến vi mạch”: Vẽ lại bản đồ bán dẫn toàn cầu: Việt Nam ở đâu?" class="a-title">Sự kiện ra mắt cuốn sách “Chip War - Cuộc chiến vi mạch”: Vẽ lại bản đồ bán dẫn toàn cầu: Việt Nam ở đâu?</a></h3>
+                        <span>
+                            Thứ Hai,
+                            27/05/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/cay-cam-ngot-cua-toi-sap-co-phan-2" title="“CÂY CAM NGỌT CỦA TÔI” SẮP CÓ PHẦN 2">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/phan-2-cay-cam-ngot-cua-toi.png?v=1715067465543" data-src="https://bizweb.dktcdn.net/100/363/455/articles/phan-2-cay-cam-ngot-cua-toi.png?v=1715067465543" alt="“CÂY CAM NGỌT CỦA TÔI” SẮP CÓ PHẦN 2" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/cay-cam-ngot-cua-toi-sap-co-phan-2" title="“CÂY CAM NGỌT CỦA TÔI” SẮP CÓ PHẦN 2" class="a-title">“CÂY CAM NGỌT CỦA TÔI” SẮP CÓ PHẦN 2</a></h3>
+                        <span>
+                            Thứ Ba,
+                            07/05/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/doc-gia-hai-mien-nam-bac-no-nuc-den-hoi-sach-nha-nam-chao-he-2024" title="Độc giả hai miền Nam Bắc nô nức đến Hội sách Nhã Nam Chào hè 2024">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/9.png?v=1712723387387" data-src="https://bizweb.dktcdn.net/100/363/455/articles/9.png?v=1712723387387" alt="Độc giả hai miền Nam Bắc nô nức đến Hội sách Nhã Nam Chào hè 2024" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/doc-gia-hai-mien-nam-bac-no-nuc-den-hoi-sach-nha-nam-chao-he-2024" title="Độc giả hai miền Nam Bắc nô nức đến Hội sách Nhã Nam Chào hè 2024" class="a-title">Độc giả hai miền Nam Bắc nô nức đến Hội sách Nhã Nam Chào hè 2024</a></h3>
+                        <span>
+                            Thứ Tư,
+                            10/04/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/hoi-sach-nha-nam-chao-he-2024" title="HỘI SÁCH NHÃ NAM CHÀO HÈ 2024">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/434663920-817277173773352-4588296209927817494-n.jpg?v=1712318954950" data-src="https://bizweb.dktcdn.net/100/363/455/articles/434663920-817277173773352-4588296209927817494-n.jpg?v=1712318954950" alt="HỘI SÁCH NHÃ NAM CHÀO HÈ 2024" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/hoi-sach-nha-nam-chao-he-2024" title="HỘI SÁCH NHÃ NAM CHÀO HÈ 2024" class="a-title">HỘI SÁCH NHÃ NAM CHÀO HÈ 2024</a></h3>
+                        <span>
+                            Thứ Sáu,
+                            05/04/2024
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/ra-mat-tac-pham-tieng-thet-cam-lang-cua-nha-van-oe-kenzaburo" title="Ra mắt tác phẩm Tiếng thét câm lặng của nhà văn Oe Kenzaburo">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/website-a-nh-da-i-die-n-ba-i-vie-t-13.png?v=1711965263523" data-src="https://bizweb.dktcdn.net/100/363/455/articles/website-a-nh-da-i-die-n-ba-i-vie-t-13.png?v=1711965263523" alt="Ra mắt tác phẩm Tiếng thét câm lặng của nhà văn Oe Kenzaburo" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/ra-mat-tac-pham-tieng-thet-cam-lang-cua-nha-van-oe-kenzaburo" title="Ra mắt tác phẩm Tiếng thét câm lặng của nhà văn Oe Kenzaburo" class="a-title">Ra mắt tác phẩm "Tiếng thét câm lặng" của nhà văn Oe Kenzaburo</a></h3>
+                        <span>
+                            Thứ Hai,
+                            01/04/2024
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/chuong-trinh-cong-tac-nha-nam-va-nhung-nguoi-ban-1" title="Chương trình cộng tác NHÃ NAM VÀ NHỮNG NGƯỜI BẠN">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/anh-man-hinh-2024-03-28-luc-10-58-19-4f7c78e6-19c6-4d68-853e-21ce01424178.png?v=1711598509417" data-src="https://bizweb.dktcdn.net/100/363/455/articles/anh-man-hinh-2024-03-28-luc-10-58-19-4f7c78e6-19c6-4d68-853e-21ce01424178.png?v=1711598509417" alt="Chương trình cộng tác NHÃ NAM VÀ NHỮNG NGƯỜI BẠN" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/chuong-trinh-cong-tac-nha-nam-va-nhung-nguoi-ban-1" title="Chương trình cộng tác NHÃ NAM VÀ NHỮNG NGƯỜI BẠN" class="a-title">Chương trình cộng tác "NHÃ NAM VÀ NHỮNG NGƯỜI BẠN"</a></h3>
+                        <span>
+                            Thứ Tư,
+                            27/03/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4 col-12 col-lg-4 col-xl-4">
+                <div class="d-none">
+                </div><article class="item_blog_base">
+                    <a class="thumb radius-5" href="/nhan-cach-hoa-loai-kien-de-suy-ngam-ve-vi-tri-cua-con-nguoi" title="Gặp gỡ nhà văn Pháp Bernard Werber: Nhân cách hóa loài kiến để suy ngẫm về vị trí của con người">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/3-5b9ff120-0d65-4636-8122-8887b6197cf5.png?v=1710819237680" data-src="https://bizweb.dktcdn.net/100/363/455/articles/3-5b9ff120-0d65-4636-8122-8887b6197cf5.png?v=1710819237680" alt="Gặp gỡ nhà văn Pháp Bernard Werber: Nhân cách hóa loài kiến để suy ngẫm về vị trí của con người" class="lazyload img-responsive loaded" data-was-processed="true">
+                    </a>
+                    <div class="content_blog">
+                        <h3><a href="/nhan-cach-hoa-loai-kien-de-suy-ngam-ve-vi-tri-cua-con-nguoi" title="Gặp gỡ nhà văn Pháp Bernard Werber: Nhân cách hóa loài kiến để suy ngẫm về vị trí của con người" class="a-title">Gặp gỡ nhà văn Pháp Bernard Werber: Nhân cách hóa loài kiến để suy ngẫm về vị trí của con người</a></h3>
+                        <span>
+                            Thứ Ba,
+                            19/03/2024
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class=" col-lg-3 col-md-12 col-12 ">
+        <aside class="aside-item sidebar-menu">
+            <h2 class="title-module">Danh mục tin</h2>
+            <div class="blog-list">
+                <div class="item">
+                    <div class="d-none">
+
+                    </div>
+                    <article class="item_blog_base first">
+                        <a class="thumb " href="/toa-dam-tieng-noi-cua-tu-lieu-ha-noi-thoi-can-dai-tu-goc-nhin-hom-nay" title="Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay">
+                            <img width="196" height="125" src="https://bizweb.dktcdn.net/100/363/455/articles/website-a-nh-da-i-die-n-ba-i-vie-t-14.png?v=1728288690220" data-src="https://bizweb.dktcdn.net/100/363/455/articles/website-a-nh-da-i-die-n-ba-i-vie-t-14.png?v=1728288690220" alt="Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay" class="lazyload img-responsive loaded" data-was-processed="true">
+                        </a>
+                        <div class="content_blog">
+                            <h3><a href="/toa-dam-tieng-noi-cua-tu-lieu-ha-noi-thoi-can-dai-tu-goc-nhin-hom-nay" title="Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay" class="a-title">Sự kiện - Tiếng nói của tư liệu: Hà Nội thời cận đại từ góc nhìn hôm nay</a></h3>
+                            <span>
+                                Thứ Hai,
+                                07/10/2024
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="item">
+                    <div class="d-none">
+
+                    </div>
+                    <article class="item_blog_base first">
+                        <a class="thumb " href="/toa-dam-loi-vao-the-gioi-van-chuong-cua-italo-calvino-1" title="Toạ đàm: Lối vào thế giới văn chương của Italo Calvino">
+                            <img width="196" height="125" src="https://bizweb.dktcdn.net/100/363/455/articles/456513921-907099581457777-879360767604344451-n.jpg?v=1724227942167" data-src="https://bizweb.dktcdn.net/100/363/455/articles/456513921-907099581457777-879360767604344451-n.jpg?v=1724227942167" alt="Toạ đàm: Lối vào thế giới văn chương của Italo Calvino" class="lazyload img-responsive loaded" data-was-processed="true">
+                        </a>
+                        <div class="content_blog">
+                            <h3><a href="/toa-dam-loi-vao-the-gioi-van-chuong-cua-italo-calvino-1" title="Toạ đàm: Lối vào thế giới văn chương của Italo Calvino" class="a-title">Toạ đàm: Lối vào thế giới văn chương của Italo Calvino</a></h3>
+                            <span>
+                                Thứ Tư,
+                                21/08/2024
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="item">
+                    <div class="d-none">
+
+                    </div>
+                    <article class="item_blog_base first">
+                        <a class="thumb " href="/sach-moi-noi-bat-thang-8" title="SÁCH MỚI NỔI BẬT THÁNG 8">
+                            <img width="196" height="125" src="https://bizweb.dktcdn.net/100/363/455/articles/website-1.png?v=1724218356270" data-src="https://bizweb.dktcdn.net/100/363/455/articles/website-1.png?v=1724218356270" alt="SÁCH MỚI NỔI BẬT THÁNG 8" class="lazyload img-responsive loaded" data-was-processed="true">
+                        </a>
+                        <div class="content_blog">
+                            <h3><a href="/sach-moi-noi-bat-thang-8" title="SÁCH MỚI NỔI BẬT THÁNG 8" class="a-title">SÁCH MỚI NỔI BẬT THÁNG 8</a></h3>
+                            <span>
+                                Thứ Tư,
+                                21/08/2024
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="item">
+                    <div class="d-none">
+
+                    </div>
+                    <article class="item_blog_base first">
+                        <a class="thumb " href="/toa-dam-ngu-ngon-moi-dem-song-khoe-moi-ngay" title="Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga">
+                            <img width="196" height="125" src="https://bizweb.dktcdn.net/100/363/455/articles/455754273-903613925139676-2106767521540937840-n.jpg?v=1724149695207" data-src="https://bizweb.dktcdn.net/100/363/455/articles/455754273-903613925139676-2106767521540937840-n.jpg?v=1724149695207" alt="Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga" class="lazyload img-responsive loaded" data-was-processed="true">
+                        </a>
+                        <div class="content_blog">
+                            <h3><a href="/toa-dam-ngu-ngon-moi-dem-song-khoe-moi-ngay" title="Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga" class="a-title">Toạ đàm: Ngủ ngon mỗi đêm, sống khoẻ mỗi ngày cùng ThS.BS CK2 Phạm Quỳnh Nga</a></h3>
+                            <span>
+                                Thứ Ba,
+                                20/08/2024
+                            </span>
+                        </div>
+                    </article>
+                </div>
+                <div class="item">
+                    <div class="d-none">
+
+                    </div>
+                    <article class="item_blog_base first">
+                        <a class="thumb " href="/su-kien-ra-mat-cuon-sach-ba-nghin-the-gioi-thom-cua-nha-nghien-cuu-nhat-chieu" title="Toạ đàm ra mắt cuốn sách Ba nghìn thế giới thơm của nhà nghiên cứu Nhật Chiêu">
+                            <img width="196" height="125" src="https://bizweb.dktcdn.net/100/363/455/articles/ea5657be714cd4128d5d.jpg?v=1722411769917" data-src="https://bizweb.dktcdn.net/100/363/455/articles/ea5657be714cd4128d5d.jpg?v=1722411769917" alt="Toạ đàm ra mắt cuốn sách Ba nghìn thế giới thơm của nhà nghiên cứu Nhật Chiêu" class="lazyload img-responsive loaded" data-was-processed="true">
+                        </a>
+                        <div class="content_blog">
+                            <h3><a href="/su-kien-ra-mat-cuon-sach-ba-nghin-the-gioi-thom-cua-nha-nghien-cuu-nhat-chieu" title="Toạ đàm ra mắt cuốn sách Ba nghìn thế giới thơm của nhà nghiên cứu Nhật Chiêu" class="a-title">Toạ đàm ra mắt cuốn sách "Ba nghìn thế giới thơm" của nhà nghiên cứu Nhật Chiêu</a></h3>
+                            <span>
+                                Thứ Tư,
+                                31/07/2024
+                            </span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
 

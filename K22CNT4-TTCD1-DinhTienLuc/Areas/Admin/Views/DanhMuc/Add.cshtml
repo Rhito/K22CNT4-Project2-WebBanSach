@@ -28,7 +28,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Blank Page</h1>
+                <h1>Thêm mới</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -57,7 +57,7 @@
                 @using(Html.BeginForm("Add", "Danhmuc", FormMethod.Post, new {}))
                 {
                     @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(false)
+                    @Html.ValidationSummary(true)
                <!-- your steps content here -->
                 <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
                     <div class="form-group">
@@ -69,8 +69,8 @@
                         <label for="status">Trạng thái</label>
                         @Html.DropDownListFor(x => x.Status, new SelectList(new List<SelectListItem>
                         {
-                            new SelectListItem { Text = "Active", Value = "1" },
-                            new SelectListItem { Text = "Inactive", Value = "0" }
+                            new SelectListItem { Text = "Active", Value = "true" },
+                            new SelectListItem { Text = "Inactive", Value = "false" }
                         }, "Value", "Text"), "Chọn trạng thái", new { @class = "form-control" })
                         @Html.ValidationMessageFor(x => x.Status, null, new { @class = "text-danger" })
                     </div>

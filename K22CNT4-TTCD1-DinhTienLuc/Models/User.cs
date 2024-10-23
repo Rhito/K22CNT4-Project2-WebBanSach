@@ -24,7 +24,6 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public decimal Phone { get; set; }
         public bool Status { get; set; }
         public Nullable<bool> Role { get; set; }
     

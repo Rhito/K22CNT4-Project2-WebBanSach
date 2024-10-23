@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,50 +18,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
-        <div class="container">
-            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
-                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
-            </a>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
-                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
-                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
-                    <li>@Html.ActionLink("Tin Tức", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
-                    <li class="dropdown">
-                        @Html.ActionLink("Loại sách", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Menu item</a></li>
-                            <li><a class="dropdown-item" href="#">Menu item</a></li>
-                            <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Liên hệ", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
-                </ul>
-            </div>
-            <nav class="navbar navbar-light d-flex align-items-center">
-                <div class="container">
-                    <form class="d-flex">
-                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
-                        <div class="header-icons dropdown d-flex align-items-center">
-                            <i class="fa-regular fa-user mx-3 fh4"></i>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
-                                @*<li><a class="dropdown-item" href="#">User</a></li>
-                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li> *@
-                            </ul>
-                        </div>
-                        <a class="header-icons d-flex align-items-center">
-                            <i class="fa-solid fa-cart-shopping fh4 "><span class="numBooksInCart">1</span></i>
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    @RenderSection("header", required:false)
     <div class="container body-content">
         @RenderBody()
     </div>

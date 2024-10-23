@@ -1,35 +1,25 @@
 ﻿
-// slider
-const slider = function () {
-    const slides = document.querySelectorAll('.slide');
+// Slider
 
-    let curSlide = 0;
-    const maxSlide = slides.length;
+var slider = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    slidesPerView: 1,
+    centeredSlides: true,
+    grabCursor: true,
+    lazy: true,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: true
+    }, 
+    
+});
 
-    const goToSlide = function (slide) {
-        slides.forEach(
-            (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-        );
-    };
 
-// Next slide
-    const nextSlide = function () {
-        if (curSlide === maxSlide - 1) {
-            curSlide = 0;
-        } else {
-            curSlide++;
-        }
+let swiper = new Swiper(".sw", {
+    lazy: true,
 
-        goToSlide(curSlide);
-    };
-
-    const intervalSlide = setInterval(nextSlide, 3000)
-}
-
-slider();
-
-let swiper = new Swiper(".swiper", {
-    slidesPerView: 5, // Hiển thị 5 phần tử
+    slidesPerView: 6, // Hiển thị 5 phần tử
     grabCursor: true, // Hiển thị con trỏ dạng kéo
     loop: true, // Cho phép lặp lại slide
     keyboard: {

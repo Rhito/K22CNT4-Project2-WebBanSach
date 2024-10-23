@@ -13,10 +13,10 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class Entities5 : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public Entities5()
+            : base("name=Entities5")
         {
         }
     
@@ -27,8 +27,9 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
     
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<DanhMucSach> DanhMucSaches { get; set; }
-        public virtual DbSet<SachTb> SachTbs { get; set; }
+        public virtual DbSet<Sach> Saches { get; set; }
         public virtual DbSet<Slide> Slides { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

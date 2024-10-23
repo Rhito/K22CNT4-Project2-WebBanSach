@@ -4,15 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1df7366be46d43a6a71108027142b2b0" Name="Diagram1">
+      <Diagram DiagramId="6d389cc65a4d487788741fd3e6c04eec" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Cart" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DanhMucSach" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SachTb" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sach" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Slide" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <AssociationConnector Association="Model.FK_Cart_SachTb" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_Cart_User" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_SachTb_DanhMucSach" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Cart_Sach1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Cart_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Sach_DanhMucSach1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

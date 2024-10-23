@@ -53,7 +53,8 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>Stt</th>
+                        <td>Id</td>
                         <th>Name</th>
                         <th>Status</th>
                     </tr>
@@ -61,11 +62,30 @@
                 <tbody>
                     @if (Model != null && Model.Any())
                     {
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        var i = 1;
+                        foreach(var item in Model)
+                        { 
+                        <tr id="trow_@item.Id">
+                            <td>@i</td>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>
+                                @if (item.Status == true)
+                                {
+                                    <span style="color: #198754">Hiển thị</span>
+                                }
+                                else
+                                {
+                                    <span style="color: #dc3545">Tạm khóa</span>
+                                }
+                            </td>
+                            <td>
+                                <a href="/Admin/Danhmuc/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
+                            </td>
                         </tr>
+                            i++;
+                        }
                     }
                     else
                     {
@@ -86,3 +106,33 @@
 
 </section>
 <!-- /.content -->
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.btnDelete', function () {
+                var id = $(this).data("id");
+                var conf = confirm("Bạn có muốn xóa bản ghi này hay không? ID: " + id);
+
+                if (conf) {
+                    $.ajax({
+                        url: '/Admin/Danhmuc/delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            } else {
+                                alert("Xóa không thành công. Vui lòng thử lại.");
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Có lỗi xảy ra: " + xhr.responseText);
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+}
