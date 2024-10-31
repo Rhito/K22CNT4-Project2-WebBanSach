@@ -11,7 +11,13 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
-            return View();
+            if (Session["User"] != null)
+            {
+                return View();
+            }else
+            {
+                return RedirectToAction("Login", "Sach", new { area = "" });
+            }
         }
     }
 }

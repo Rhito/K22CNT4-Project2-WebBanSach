@@ -32,3 +32,24 @@ let swiper = new Swiper(".sw", {
 });
 
 
+/* Sticky header */
+const header = document.querySelector('header');
+const nav = document.querySelector('.navbar'); // Chọn phần tử .navbar của bạn
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+    const [entry] = entries;
+
+    if (!entry.isIntersecting) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+};
+
+// Tạo IntersectionObserver để theo dõi phần tử header
+const headerObserver = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`, // Khoảng cách dính
+});
+
+// Kích hoạt quan sát cho phần tử header
+headerObserver.observe(header);

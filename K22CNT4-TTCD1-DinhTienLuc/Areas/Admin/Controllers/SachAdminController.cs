@@ -14,8 +14,15 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            var items = db.Saches;
-            return View(items);
+            if (Session["User"] != null)
+            {
+                var items = db.Saches;
+                return View(items);              
+            }
+            else
+            {
+                return RedirectToAction("Login", "Sach", new { area = "" });
+            }
         }
         public ActionResult Add()
         {

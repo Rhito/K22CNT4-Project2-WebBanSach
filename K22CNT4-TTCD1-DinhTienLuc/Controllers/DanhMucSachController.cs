@@ -12,6 +12,7 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Controllers
         protected Entities5 db = new Entities5();
         protected void LoadDanhMuc()
         {
+          
             var danhMucSachs = db.DanhMucSaches.Where(x => x.Status == true).ToList();
             ViewBag.danhmuc = new SelectList(danhMucSachs, "Id", "Name");
         }

@@ -1,0 +1,121 @@
+﻿@model IEnumerable<K22CNT4_TTCD1_DinhTienLuc.Models.Cart>
+@{
+    ViewBag.Title = "Cart";
+    var user = Session["User"] as K22CNT4_TTCD1_DinhTienLuc.Models.User;
+}
+@section header {
+    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
+        <div class="container">
+            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
+                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
+                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "TinTuc", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Loại sách", "Danhmuc", "DanhMucSach", new { area = "" }, new { @class = "nav-link px-3" })
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/DanhMucSach/Danhmuc">Sách tổng hợp</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/VanHocHienDai">Văn học hiện đại</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/KinhTeHoc">Kinh tế học</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/TamLyHoc">Tâm lý học</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Liên hệ", "LienHe", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-light d-flex align-items-center">
+                <div class="container">
+                    <form class="d-flex">
+                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
+                        <div class="header-icons dropdown d-flex align-items-center">
+                            <i class="fa-regular fa-user mx-3 fh4"></i>
+                            <ul class="dropdown-menu">
+                                @{
+                                    if (user == null)
+                                    {
+                                        <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                        <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a class="dropdown-item" href="#">@user.Name</a></li>
+                                        <li>
+                                            <form action="/Sach/DangXuat" method="post">
+                                                <button class="dropdown-item" type="submit">Đăng xuất</button>
+                                            </form>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <a href="/Cart" class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span id="numBooksInCart" class="numBooksInCart">0</span></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+}
+
+<div class="container my-4">
+    <div>
+        <h2 class="fh4 my-4">Giỏ hàng</h2>
+    </div>
+    <table id="tbl-cart" class="table mb-5">
+        <thead>
+            <tr class="text-center">
+                <th >STT</th>
+                <th >Thông tin sản phẩm</th>            
+                <th>Giá</th>
+                <th >Số lượng</th>
+                <th ></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                var i = 1;
+                var tongtien = decimal.Zero;
+                foreach (var item in Model)
+                {
+                    tongtien += item.TotalPrice;
+                    <tr class="text-center" id="trow_@item.IdSach">
+                        <td>@(i++)</td>
+                        <td>
+                            <img width="96" height="147" src="@item.SachImages" />
+                            <a class="fh4" href="/Sach/Details/@item.IdSach">@item.TenSach</a>
+                        </td>
+                        <td>@item.TotalPrice.ToString("N0")₫</td>
+                        <td>
+                            @item.Quantity
+                        </td>
+
+                        <td><a href="#" data-id="@item.IdSach" class="btn btn-sm btn-danger btnDelete">Xóa</a></td>
+                    </tr>
+                }
+                <tr id="ThanhToanCD">
+                    <th colspan="4" style="text-align: right;"><h4>Tổng:</h4></th>
+                    <th>
+                        <span id="totalPay" class="fh4">@tongtien.ToString("N0")₫</span>
+
+                        <a class="my-2 btn btn-success">Thanh Toán</a>
+                    </th>
+                </tr>
+
+            }
+            else
+            {
+                <tr id="empty-cart">
+                    <th colspan="5">Không có sản phẩm trong giỏ hàng!!</th>
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+</div>

@@ -1,15 +1,14 @@
 ﻿
-
+@{ 
+    var user = Session["User"] as K22CNT4_TTCD1_DinhTienLuc.Models.User;
+}
 
 <!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-            <img src="~/Content/clients/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex" style="padding-left: 8px">      
         <div class="info">
-            <a href="#" class="d-block">null</a>
+            <a href="#" class="d-block">Người dùng: @user.Name</a>
         </div>
     </div>
 
@@ -37,15 +36,6 @@
                     </p>
                 </a>
             </li>
-            <!--<li class="nav-item">
-                <a href="/Admin/Cart" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Cart-->
-                        @* <span class="right badge badge-danger">New</span>*@
-                    <!--</p>
-                </a>
-            </li>-->
 
             <li class="nav-item">
                 <a href="/Admin/User" class="nav-link">
@@ -55,32 +45,6 @@
                     </p>
                 </a>
             </li>
-
-            @*<li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>
-                        Quản lý Sách
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                        <a href="~/Content/clients/index.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Danh mục</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="~/Content/clients/index2.html" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Sách</p>
-                        </a>
-                    </li>
-
-                </ul>
-
-            </li>*@
 
             <li class="nav-item">
                 <a href="/Admin/Slide" class="nav-link">

@@ -4,11 +4,13 @@
     <EntitySetMapping Name="Carts">
       <EntityTypeMapping TypeName="Model.Cart">
         <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TenSach" ColumnName="TenSach" />
+          <ScalarProperty Name="SachImages" ColumnName="SachImages" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdSach" ColumnName="IdSach" />
           <ScalarProperty Name="IdUser" ColumnName="IdUser" />
           <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Quatity" ColumnName="Quatity" />
           <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
         </MappingFragment>
       </EntityTypeMapping>

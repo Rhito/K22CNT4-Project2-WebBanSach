@@ -12,21 +12,29 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         {
             this.items = new List<Cart>();
         }
-        public void AddToCart(Cart item, int quantity) {
-            var checkExits = items.FirstOrDefault(x=>x.Id == item.Id);
+        public void AddToCart(Cart item, int quantity)
+        {
+            // Kiểm tra sản phẩm trong giỏ hàng dựa trên IdSach thay vì Id (IdSach là mã sản phẩm)
+            var checkExits = items.FirstOrDefault(x => x.IdSach == item.IdSach);
+
             if (checkExits != null)
             {
+                // Nếu sản phẩm đã tồn tại, tăng số lượng và tính lại tổng giá
                 checkExits.Quantity += quantity;
                 checkExits.TotalPrice = checkExits.Price * checkExits.Quantity;
-
-            }else
+            }
+            else
             {
+                // Nếu sản phẩm chưa tồn tại, thêm sản phẩm vào giỏ
+                item.Quantity = quantity; // Đảm bảo số lượng của item đúng
+                item.TotalPrice = item.Price * item.Quantity; // Tính tổng giá
                 items.Add(item);
             }
         }
+
         public void RemoveFromCart(int id)
         {
-            var checkExits = items.FirstOrDefault(x => x.Id == id);
+            var checkExits = items.FirstOrDefault(x => x.IdSach == id);
             if (checkExits != null)
             {
                 items.Remove(checkExits);             

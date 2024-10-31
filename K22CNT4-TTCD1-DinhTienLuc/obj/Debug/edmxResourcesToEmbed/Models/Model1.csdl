@@ -7,11 +7,13 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdSach" Type="Int32" Nullable="false" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="Quatity" Type="Int32" />
-    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <NavigationProperty Name="Sach" Relationship="Self.FK_Cart_Sach1" FromRole="Cart" ToRole="Sach" />
     <NavigationProperty Name="User" Relationship="Self.FK_Cart_User1" FromRole="Cart" ToRole="User" />
+    <Property Name="SachImages" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TenSach" Type="String" Nullable="false" MaxLength="110" FixedLength="true" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="DanhMucSach">
     <Key>
@@ -62,7 +64,7 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="110" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" DefaultValue="True" />
     <Property Name="Role" Type="Boolean" />
     <NavigationProperty Name="Carts" Relationship="Self.FK_Cart_User1" FromRole="User" ToRole="Cart" />
   </EntityType>

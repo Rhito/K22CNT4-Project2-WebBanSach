@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Detail";
     var item = Model.FirstOrDefault();
+    var user = Session["User"] as K22CNT4_TTCD1_DinhTienLuc.Models.User;
 }
 @section header {
     <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
@@ -35,14 +36,26 @@
                         <div class="header-icons dropdown d-flex align-items-center">
                             <i class="fa-regular fa-user mx-3 fh4"></i>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
-                                @*<li><a class="dropdown-item" href="#">User</a></li>
-                                    <li><a class="dropdown-item" href="#">Đăng xuất</a></li> *@
+                                @{
+                                    if (user == null)
+                                    {
+                                        <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                        <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a class="dropdown-item" href="#">@user.Name</a></li>
+                                        <li>
+                                            <form action="/Sach/DangXuat" method="post">
+                                                <button class="dropdown-item" type="submit">Đăng xuất</button>
+                                            </form>
+                                        </li>
+                                    }
+                                }
                             </ul>
                         </div>
-                        <a class="header-icons d-flex align-items-center">
-                            <i class="fa-solid fa-cart-shopping fh4 "><span class="numBooksInCart">1</span></i>
+                        <a href="/Cart" class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span id="numBooksInCart" class="numBooksInCart">0</span></i>
                         </a>
                     </div>
                 </div>
@@ -60,7 +73,7 @@
                         <div class="swiper-wrapper" id="lightgallery" aria-live="polite">
 
                             <a class="swiper-slide swiper-slide-active" data-hash="0" href="@item.Images" title="@item.Name" role="group" aria-label="1 / 1" style="width: 453px; margin-right: 10px;">
-                                <img     width="204" src="@item.Images" class="img-responsive mx-auto d-block swiper-lazy swiper-lazy-loaded">
+                                <img width="204" src="@item.Images" class="img-responsive mx-auto d-block swiper-lazy swiper-lazy-loaded">
                             </a>
 
                         </div>
@@ -107,7 +120,7 @@
                                 <div class="qty-ant clearfix custom-btn-number ">
                                     <label class="d-none">Số lượng:</label>
                                     <div class="custom custom-btn-numbers clearfix input_number_product">
-                                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty) &amp; qty > 1 ) result.value--;return false;" class="btn-minus btn-cts" type="button">
+                                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty) && qty > 1 ) result.value--;return false;" class="btn-minus btn-cts" type="button">
                                             <i class="fa-solid fa-minus"></i>
                                         </button>
                                         <input aria-label="Số lượng" type="text" class="qty input-text" id="qty" name="quantity" size="4" value="1" maxlength="3" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;">
@@ -118,7 +131,7 @@
                                     <span class="counter-qty">Còn lại @item.Quantity trong kho</span>
                                 </div>
                                 <div class="btn-mua">
-                                    <button type="submit" data-role="addtocart" class="btn btn-lg btn-gray btn-cart btn_buy add_to_cart">Thêm vào giỏ hàng</button>
+                                    <button type="submit" data-role="addtocart" data-id="@item.Id" class="btn btn-lg btn-gray btn-cart btn_buy btnAddToCart">Thêm vào giỏ hàng</button>
                                     <button type="button" class="btn btn-lg btn-gray btn_buy btn-buy-now">Mua ngay</button>
                                 </div>
                             </div>

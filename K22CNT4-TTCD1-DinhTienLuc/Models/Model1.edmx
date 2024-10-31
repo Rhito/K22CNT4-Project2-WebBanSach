@@ -191,7 +191,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="110" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" DefaultValue="True" />
           <Property Name="Role" Type="Boolean" />
           <NavigationProperty Name="Carts" Relationship="Self.FK_Cart_User1" FromRole="User" ToRole="Cart" />
         </EntityType>

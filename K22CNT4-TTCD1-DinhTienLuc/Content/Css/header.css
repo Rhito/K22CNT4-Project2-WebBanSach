@@ -1,8 +1,8 @@
 ﻿:root {
-    --Primary-color: hsl(145, 48%, 51%) /*rgb(255, 127, 71)*/;
+    --Primary-color: #000000;/*hsl(145, 48%, 51%)*/ /*rgb(255, 127, 71)*/;
 }
 body {
-    background-image: linear-gradient(to bottom right, #333, #cff)
+    background-image: linear-gradient(to top right , #ffc, #cff)
 }
 
 header {
@@ -23,6 +23,23 @@ header {
 .logo {
     max-width: 50px;
 }
+/* CSS cho sticky navigation */
+.clear-fixed {
+    height: 80px; /* Đặt chiều cao theo chiều cao của thanh nav */
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Giữ thanh điều hướng ở phía trên các phần tử khác */
+    background-color: #fff; /* Đảm bảo có màu nền nếu cần */
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ cho thanh sticky */
+}
+
+.navbar-expand-sm {
+    transition: top 0.3s ease-in-out; /* Thêm chuyển động mượt */
+}
+
 /*Top-Slider*/
 .slide {
     border-radius: 5px;
@@ -33,10 +50,11 @@ header {
 
 /*Dropdown menu*/
 .nav-link:hover, .dropdown-menu li:hover a,
-.logo:hover ,
+.dropdown-menu li:hover button,
+.logo:hover,
 .nav-active {
     border-radius: 5px;
-    color: hsl(145, 48%, 21%)!important;
+    color: hsl(145, 48%, 21%) !important;
     text-decoration: underline;
 } /*{
     display: block;
@@ -86,18 +104,18 @@ header {
 
 .fa-cart-shopping .numBooksInCart {
     position: absolute;
-    font-size: .7rem;
+    font-size: .6rem;
     color: #ffffff;
-    width: 1.4em;
-    height: 3.2vh;
+    width: 1.3em;
+    height: 3vh;
     top: -12px;
     left: 18px;
     right: 0;
     bottom: 0;
-    border-radius: 4rem;
+    border-radius: 10rem;
     background-color: var(--Primary-color);
     text-align: center;
-    line-height: 3.3vh;
+    line-height: 3vh;
 }
 
 /*Register and Login*/
@@ -113,7 +131,7 @@ header {
     margin: 60px;
     border: solid 1px var(--Primary-color);
     padding: 34px;
-    background-image: linear-gradient(to bottom right, var(--Primary-color), #1D022222);
+    background-image: linear-gradient(to top right, #c2e58d, #cff);
     border-radius: 3px;
 }
 

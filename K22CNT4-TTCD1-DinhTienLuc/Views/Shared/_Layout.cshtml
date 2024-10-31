@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sách Việt Nam</title>
+    <title>Sách</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/Css/header.css">
@@ -12,13 +12,15 @@
     <link rel="shortcut icon" href="~/Content/Images/sachLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="~/Content/Css/main.css" />
     <link rel="stylesheet" href="~/Content/Css/footer.css" />
-    <script defer src="~/Scripts/MainJS/main.js"></script>
+    
 
     @*Swiper slider*@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-    @RenderSection("header", required:false)
+    
+    @RenderSection("header", required: false)
+    <div class="clear-fixed"></div>
     <div class="container body-content">
         @RenderBody()
     </div>
@@ -95,5 +97,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="~/Scripts/shoppingcart.js"></script>
+    <script src="~/Scripts/MainJS/main.js"></script>
 </body>
 </html>

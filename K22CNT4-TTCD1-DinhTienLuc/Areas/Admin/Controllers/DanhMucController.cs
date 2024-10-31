@@ -14,8 +14,16 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Views.Home
 
         public ActionResult Index()
         {
-            var items = db.DanhMucSaches;
-            return View(items);
+            if (Session["User"] != null)
+            {
+                var items = db.DanhMucSaches;
+                return View(items);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Sach", new { area = "" });
+            }
+            
         }
         public ActionResult Add()
         {
