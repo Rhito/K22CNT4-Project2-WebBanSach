@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\views\\danhmucsach\\tamlyhoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:views\\danhmucsach\\tamlyhoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\views\\danhmucsach\\vanhochiendai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:views\\danhmucsach\\vanhochiendai.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\views\\danhmucsach\\kinhtehoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:views\\danhmucsach\\kinhtehoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\scripts\\mainjs\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:scripts\\mainjs\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TamLyHoc.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\DanhMucSach\\TamLyHoc.cshtml",
+              "RelativeDocumentMoniker": "Views\\DanhMucSach\\TamLyHoc.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\DanhMucSach\\TamLyHoc.cshtml",
+              "RelativeToolTip": "Views\\DanhMucSach\\TamLyHoc.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAE4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-01T09:53:07.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KinhTeHoc.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\DanhMucSach\\KinhTeHoc.cshtml",
+              "RelativeDocumentMoniker": "Views\\DanhMucSach\\KinhTeHoc.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\DanhMucSach\\KinhTeHoc.cshtml",
+              "RelativeToolTip": "Views\\DanhMucSach\\KinhTeHoc.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAE0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-01T09:51:19.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.js",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Scripts\\MainJS\\main.js",
+              "RelativeDocumentMoniker": "Scripts\\MainJS\\main.js",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Scripts\\MainJS\\main.js",
+              "RelativeToolTip": "Scripts\\MainJS\\main.js",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-01T09:28:45.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VanHocHienDai.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\DanhMucSach\\VanHocHienDai.cshtml",
+              "RelativeDocumentMoniker": "Views\\DanhMucSach\\VanHocHienDai.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\DanhMucSach\\VanHocHienDai.cshtml",
+              "RelativeToolTip": "Views\\DanhMucSach\\VanHocHienDai.cshtml",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAG0AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-01T09:28:23.501Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

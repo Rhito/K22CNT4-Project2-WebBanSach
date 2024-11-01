@@ -1,0 +1,96 @@
+﻿@model K22CNT4_TTCD1_DinhTienLuc.Models.User
+@{
+    ViewBag.Title = "Login";
+    var user = Session["User"] as K22CNT4_TTCD1_DinhTienLuc.Models.User;
+}
+
+@section header {
+    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
+        <div class="container">
+            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
+                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
+                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "TinTuc", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Loại sách", "Danhmuc", "DanhMucSach", new { area = "" }, new { @class = "nav-link px-3" })
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/DanhMucSach/Danhmuc">Sách tổng hợp</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/VanHocHienDai">Văn học hiện đại</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/KinhTeHoc">Kinh tế học</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/TamLyHoc">Tâm lý học</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Liên hệ", "", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-light d-flex align-items-center">
+                <div class="container">
+                    <form class="d-flex">
+                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
+                        <div class="header-icons dropdown d-flex align-items-center">
+                            <i class="fa-regular fa-user mx-3 fh4"></i>
+                            <ul class="dropdown-menu">
+                                @{
+                                    if (user == null)
+                                    {
+                                        <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                        <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a class="dropdown-item" href="#">@user.Name</a></li>
+                                        <li>
+                                            <form action="/Sach/DangXuat" method="post">
+                                                <button class="dropdown-item" type="submit">Đăng xuất</button>
+                                            </form>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <a href="/Cart" class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span id="numBooksInCart" class="numBooksInCart">0</span></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+}
+
+<main>
+    <div class="container">
+        <div class="col-login">
+            <div class="group-login group-log">
+                <h1 class="fh4  mb-3">
+                    Đăng nhập
+                </h1>
+                @using (Html.BeginForm("Login", "Sach", FormMethod.Post, new { id = "customer_register", accept_charset = "UTF-8" }))
+                {
+                    @Html.ValidationSummary(true) // Hiển thị tất cả các lỗi từ ModelState
+
+                    <fieldset class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-lg", placeholder = "Email", required = "required" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Mật khẩu <span class="required">*</span> </label>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control form-control-lg", placeholder = "Mật khẩu", required = "required" })
+                        @Html.ValidationMessageFor(m => m.Password) 
+                    </fieldset>
+
+                    <button class="btn-login" type="submit">Đăng nhập</button>
+                }
+            </div>
+
+        </div>
+    </div>
+</main>

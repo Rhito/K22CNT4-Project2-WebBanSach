@@ -1,0 +1,148 @@
+﻿@model IEnumerable<K22CNT4_TTCD1_DinhTienLuc.Models.Sach>
+@{
+    ViewBag.Title = "Detail";
+    var item = Model.FirstOrDefault();
+    var user = Session["User"] as K22CNT4_TTCD1_DinhTienLuc.Models.User;
+}
+@section header {
+    <header class="navbar navbar-light bg-white navbar-expand-sm navbar-toggle able-sm">
+        <div class="container">
+            <a href="@Url.Action("Index", "Sach", new { area = "" })" class="nav-link">
+                <img src="~/Content/Images/sachLogo.png" alt="Home" class="logo" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-center ">
+                <ul class="navbar-nav flex-grow-1 d-flex justify-content-lg-center fh4">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li>@Html.ActionLink("Tin Tức", "TinTuc", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                    <li class="dropdown">
+                        @Html.ActionLink("Loại sách", "Danhmuc", "DanhMucSach", new { area = "" }, new { @class = "nav-link px-3" })
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/DanhMucSach/Danhmuc">Sách tổng hợp</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/VanHocHienDai">Văn học hiện đại</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/KinhTeHoc">Kinh tế học</a></li>
+                            <li><a class="dropdown-item" href="/DanhMucSach/TamLyHoc">Tâm lý học</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Liên hệ", "LienHe", "Sach", new { area = "" }, new { @class = "nav-link px-3" })</li>
+                </ul>
+            </div>
+            <nav class="navbar navbar-light d-flex align-items-center">
+                <div class="container">
+                    <form class="d-flex">
+                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 40px">
+                        <div class="header-icons dropdown d-flex align-items-center">
+                            <i class="fa-regular fa-user mx-3 fh4"></i>
+                            <ul class="dropdown-menu">
+                                @{
+                                    if (user == null)
+                                    {
+                                        <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
+                                        <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a class="dropdown-item" href="#">@user.Name</a></li>
+                                        <li>
+                                            <form action="/Sach/DangXuat" method="post">
+                                                <button class="dropdown-item" type="submit">Đăng xuất</button>
+                                            </form>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <a href="/Cart" class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span id="numBooksInCart" class="numBooksInCart">0</span></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+}
+
+<main>
+    <div class="container my-5">
+        <div class="row d-flex justify-content-center">
+            <div style=" max-width: 20.6667%;" class="product-detail-left product-images col-12 col-md-12 col-lg-5">
+                <div class="product-image-detail">
+                    <div class="swiper-container gallery-top margin-bottom-10 swiper-container-initialized swiper-container-horizontal swiper-container-free-mode">
+                        <div class="swiper-wrapper" id="lightgallery" aria-live="polite">
+
+                            <a class="swiper-slide swiper-slide-active" data-hash="0" href="@item.Images" title="@item.Name" role="group" aria-label="1 / 1" style="width: 453px; margin-right: 10px;">
+                                <img width="204" src="@item.Images" class="img-responsive mx-auto d-block swiper-lazy swiper-lazy-loaded">
+                            </a>
+
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                    <div class="swiper-button-main d-none">
+                        <div class="swiper-container gallery-thumbs swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-thumbs">
+                            <div class="swiper-wrapper" id="swiper-wrapper-5ed59db8ff2fdc99" aria-live="polite" style="transition: all;">
+                                <div class="swiper-slide" data-hash="0">
+                                    <img src="" alt="@item.Name" data-image="@item.Images" class="swiper-lazy">
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                                </div>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-5ed59db8ff2fdc99" aria-disabled="false"><svg class="icon"> <use xlink:href="#previcon"></use> </svg></div>
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-5ed59db8ff2fdc99" aria-disabled="false"><svg class="icon"> <use xlink:href="#previcon"></use> </svg></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-5 details-pro">
+                <h3 class="title-head">@item.Name</h3>
+
+                <div class="group-action-button">
+                    <div class="group-power">
+                        <div class="price-box clearfix">
+
+                            <span class="special-price">
+                                <span class="price product-price">Giá: @item.Price₫</span>
+                            </span>                           
+                        </div>
+                    </div>
+                    <form enctype="multipart/form-data" id="add-to-cart-form" data-cart-form="" action="/cart/add" method="post" class="wishItem">
+                        <div class="form-product">
+
+                            <div class="box-variant clearfix  d-none ">
+
+                                <input type="hidden" id="one_variant" name="variantId" value="@item.Id">
+
+                            </div>
+                            <div class="clearfix from-action-addcart ">
+                                <div class="qty-ant clearfix custom-btn-number ">
+                                    <label class="d-none">Số lượng:</label>
+                                    <div class="custom custom-btn-numbers clearfix input_number_product">
+                                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty) && qty > 1 ) result.value--;return false;" class="btn-minus btn-cts" type="button">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                                        <input aria-label="Số lượng" type="text" class="qty input-text" id="qty" name="quantity" size="4" value="1" maxlength="3" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;" onchange="if(this.value == 0)this.value=1;">
+                                        <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" class="btn-plus btn-cts" type="button">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    <span class="counter-qty">Còn lại @item.Quantity trong kho</span>
+                                </div>
+                                <div class="btn-mua">
+                                    <button type="submit" data-role="addtocart" data-id="@item.Id" class="btn btn-lg btn-gray btn-cart btn_buy btnAddToCart">Thêm vào giỏ hàng</button>
+                                    <button type="button" class="btn btn-lg btn-gray btn_buy btn-buy-now">Mua ngay</button>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </form>
+                    <div class="description my-3 mx-1">
+                        <h3 class="fh4">Mô tả: </h3>
+                        <span>@item.Description</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
