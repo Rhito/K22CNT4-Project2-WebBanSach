@@ -5,7 +5,6 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-
 @section naviheader {
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -56,7 +55,7 @@
                     <tr>
                         <th>Stt</th>
                         <th>Id</th>
-                        <th>Id danh mục</th>
+                        <th>Danh mục</th>
                         <th style=" width: 12%;">Name</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -68,19 +67,21 @@
                 <tbody>
                     @if (Model != null && Model.Any())
                     {
-                        var i = 1;
+                        var i = 1;                      
                         foreach (var item in Model)
                         {
                             <tr id="trow_@item.Id">
                                 <td>@i</td>
                                 <td>@item.Id</td>
-                                <td>@item.IdDanhMuc</td>
+                                <td width="84px">
+                                    @item.DanhMucSach.Name
+                                </td>
                                 <td style=" width: 12%;">@item.Name</td>
                                 <td>@item.Quantity</td>
-                                <td>@item.Price</td>
-                                <td style=" width: 18%;">@item.Description</td>
+                                <td>@item.Price.ToString("N0")đ</td>
+                                <td  class="overflow-text" style=" width: 18%;">@item.Description</td>
                                 <td style=" max-width: 25%; width: 21%;">
-                                    <span class="d-block">
+                                    <span class="d-block overflow-text">
                                         @item.Images
                                     </span>
                                     <img src="@item.Images" width="80" />

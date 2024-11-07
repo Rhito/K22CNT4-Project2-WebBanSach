@@ -28,33 +28,6 @@ var swiper = new Swiper(".sw", {
         prevEl: ".swiper-button-prev", // Nút "Quay lại"
     },
 });
-/* grid swiper */
-
-var swiper = new Swiper('.sw-grid', {
-    slidesPerView: 2,
-    spaceBetween: 16,
-    grabCursor: true,
-    lazy: true,
-    loop: true,
-    grid: {
-        rows: 2,
-    },
-    breakpoints: {
-        768: {
-            slidesPerView: 3,
-            grid: {
-                rows: 2,
-            },
-        },
-        1024: {
-            slidesPerView: 4,
-            grid: {
-                rows: 2,
-            },
-        }
-    }
-});
-
 
 
 /* Sticky header */

@@ -97,6 +97,17 @@ header {
     color: var(--Primary-color);
     cursor: pointer;
 }
+    .header-icons:hover i {
+        color: hsl(145, 48%, 21%) !important;
+    }
+    .header-icons:hover span {
+        color: hsl(145, 48%, 21%);
+        background-color: aliceblue;
+
+    }
+    .header-icons ul {
+        top: 40px;
+    }
 
 .fa-cart-shopping {
     position: relative;

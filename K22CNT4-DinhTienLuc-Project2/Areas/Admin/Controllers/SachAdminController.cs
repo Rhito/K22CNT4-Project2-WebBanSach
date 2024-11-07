@@ -15,8 +15,8 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
         public ActionResult Index()
         {
             if (Session["User"] is User user && user.Role == true)
-            {
-                var items = db.Saches;
+            {               
+                var items = db.Saches.Include("DanhMucSach").ToList();
                 return View(items);              
             }
             else

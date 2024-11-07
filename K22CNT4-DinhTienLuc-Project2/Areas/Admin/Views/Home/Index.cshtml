@@ -1,4 +1,4 @@
-﻿
+﻿@model K22CNT4_TTCD1_DinhTienLuc.Models.DashboardViewModel
 @{
     ViewBag.Title = "Trang chủ admin ";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -14,10 +14,33 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/Admin/Home">Trang chủ</a></li>
-                    @*<li class="breadcrumb-item active">Advanced Form</li>*@
                 </ol>
             </div>
         </div>
     </div><!-- /.container-fluid -->
+</section>
+<section>
+    <div class="row m-auto justify-content-center">
+        <a href="Danhmuc/">
+            <div class="box-info" >
+                <h4>Tổng số danh mục: @Model.TotalDM</h4>
+            </div>
+        </a>
+        <a href="SachAdmin">
+            <div class="box-info">
+                <h4>Tổng số sách: @Model.TotalSach</h4>
+            </div>
+        </a>
+        <a href="User">
+            <div class="box-info">
+                <h4>Tổng số người dùng: @Model.TotalUsers</h4>
+            </div>
+        </a>
+        <a href="Slide">
+            <div class="box-info">
+                <h4>Tổng số slide: @Model.TotalSlides</h4>
+            </div>
+        </a>
+    </div>
 </section>
 
