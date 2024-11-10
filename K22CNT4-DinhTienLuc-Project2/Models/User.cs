@@ -19,17 +19,19 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         public User()
         {
             this.Status = true;
+            this.Role = false;
             this.Carts = new HashSet<Cart>();
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage = "Hãy nhập tên người dùng:")]
+        [Required(ErrorMessage = "Hãy nhập tên người dùng")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Hãy nhập email:")]
-        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Email không hợp lệ.")]
+        [Required(ErrorMessage = "Hãy nhập Email")]
+        [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Địa chỉ Email không hợp lệ")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Hãy nhập mật khẩu:")]
+        [Required(ErrorMessage = "Hãy nhập mật khẩu")]
         public string Password { get; set; }
+        [Required(ErrorMessage = "Hãy chọn trạng thái")]
         public bool Status { get; set; }
         public Nullable<bool> Role { get; set; }
     

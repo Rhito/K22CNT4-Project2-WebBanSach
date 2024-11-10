@@ -42,9 +42,12 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar logout -->
 
+                <li class="nav-item mx-2"> 
+                    <a class="dropdown-item btn btn-primary active" href="@Url.Action("Index", "Sach", new { area = "" })">Xem trang sản phẩm</a>
+                </li>
                 <li class="nav-item"> 
                     <form action="/Sach/DangXuat" method="post">
-                        <button class="dropdown-item" type="submit">Đăng xuất</button>
+                        <button class="dropdown-item btn btn-secondary active" type="submit">Đăng xuất</button>
                     </form>
                 </li>             
             </ul>
@@ -54,7 +57,7 @@
         <aside style="background-color: #3A3F58" class="position-fixed main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/Admin/Home" class="brand-link">
-                <img src="~/Content/Images/sachLogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="~/Content/Images/sachLogo.png" alt="Sách Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Web bán sách</span>
             </a>
 
@@ -70,7 +73,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>temp</b> 
             </div>
-            <strong>.</strong> All rights reserved.
+            <strong>2024-Project02</strong>Đinh Tiến Lực
         </footer>
 
         <!-- Control Sidebar -->

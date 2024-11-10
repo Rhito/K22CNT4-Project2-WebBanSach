@@ -28,17 +28,28 @@
             </div>
             <nav class="navbar navbar-light d-flex align-items-center">
                 <div class="container">
-                    <form class="d-flex">
-                        <input class="form-control me-2 searchInput" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-warning" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <!-- Search bar -->
+                    <!-- Search Form -->
+                    <form class="d-flex me-3" onsubmit="return false;">
+                        <input class="form-control me-2 searchInput" id="searchInput" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-warning" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
+
+                    <!-- Search results container -->
+                    <div id="searchResults" class="mt-3"></div>
+
+                    @*Login and Register and Cart*@
                     <div class="d-flex justify-content-center align-items-center" style="height: 40px">
                         <div class="header-icons dropdown d-flex align-items-center">
                             <i class="fa-regular fa-user mx-3 fh4"></i>
                             <ul class="dropdown-menu">
                                 @{
+                                    @*Login and Register and Logout*@
                                     if (user == null)
                                     {
+
                                         <li><a class="dropdown-item" href="@Url.Action("Login", "Sach", new { area = "" })">Đăng nhập</a></li>
                                         <li><a class="dropdown-item" href="@Url.Action("Register", "Sach", new { area = "" })">Đăng ký</a></li>
                                     }
@@ -54,8 +65,9 @@
                                 }
                             </ul>
                         </div>
-                         <a href="/Cart" class="header-icons d-flex align-items-center">
-                            <i class="fa-solid fa-cart-shopping fh4 "><span id="numBooksInCart" class="numBooksInCart">1</span></i>
+                        @*Cart*@
+                        <a href="/Cart" class="header-icons d-flex align-items-center">
+                            <i class="fa-solid fa-cart-shopping fh4 "><span id="numBooksInCart" class="numBooksInCart">0</span></i>
                         </a>
                     </div>
                 </div>
@@ -105,8 +117,8 @@
                     </div>
                 }
             </div>
-          @*  <button class="swiper-button-prev prev-btn"></button>
-            <button class="swiper-button-next next-btn"></button>*@
+            @*  <button class="swiper-button-prev prev-btn"></button>
+                <button class="swiper-button-next next-btn"></button>*@
         </div>
 
         @*Book slider*@
@@ -146,4 +158,30 @@
         </div>
     </div>
 </section>
+@section scripts {
+    <!-- jQuery Script -->
+    <script>
+    function searchBooks() {
+        const query = $('#searchInput').val().trim();
 
+        if (query.length > 0) {
+            $.ajax({
+                url: '@Url.Action("Search", "Sach")',
+                method: 'GET',
+                data: { query: query },
+                success: function (result) {
+                    $('#searchResults').html(result);
+                },
+                error: function () {
+                    $('#searchResults').html('<p>Error loading results.</p>');
+                }
+            });
+        } else {
+            $('#searchResults').html(''); // Xóa kết quả khi thanh tìm kiếm trống
+        }
+    }
+
+    // Bắt sự kiện input để xử lý cả khi bấm nút "X"
+    $('#searchInput').on('input', searchBooks);
+    </script>
+}

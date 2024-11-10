@@ -1,5 +1,5 @@
 ﻿:root {
-    --Primary-color: #000000;/*hsl(145, 48%, 51%)*/ /*rgb(255, 127, 71)*/;
+    --Primary-color: #000000;/*hsl(145, 48%, 51%)*/ /*rgb(255, 127, 71);*/
 }
 body {
     background-image: linear-gradient(to top right , #ffc, #cff)
@@ -115,16 +115,15 @@ header {
 
 .fa-cart-shopping .numBooksInCart {
     position: absolute;
-    font-size: .6rem;
-    color: #ffffff;
+    font-size: .7rem;
+    color: #000000;
     width: 1.3em;
     height: 3vh;
-    top: -12px;
+    top: -16px;
     left: 18px;
     right: 0;
     bottom: 0;
     border-radius: 10rem;
-    background-color: var(--Primary-color);
     text-align: center;
     line-height: 3vh;
 }
@@ -189,7 +188,7 @@ header {
 
 /*news*/
 .item {
-    padding: 17px 0;
+    padding: 12px 0 0 0;
     border-bottom: solid 1px #BBBBBF;
     width: 360px;
 }
@@ -203,16 +202,19 @@ header {
 
 .item_blog_base .thumb {
     overflow: hidden;
-    display: block
+    display: block;
+    max-width: 214px;
 }
 
 .item_blog_base .thumb img {
     transition: all 0.5s;
     max-width: 100%;
     width: auto;
-    height: 90%;
+   /* height: 90%;*/
     overflow: clip;
     object-fit: fill;
+    margin: 8px;
+    border-radius: 5px;
 }
 
 .content_blog {

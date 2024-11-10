@@ -85,11 +85,11 @@
                             <div class="input-group">
                                 <div class="custom-file">
                                     @Html.TextBoxFor(x => x.Images, new { @id = "txtImgame", @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Images, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="intput-group-append">
                                     <input type="button" class="btn btn-secondary" value="Tải ảnh" onclick="BrowseServer('txtImgame')" />
                                 </div>
+                                @Html.ValidationMessageFor(x => x.Images, null, new { @class = "text-danger" })
                             </div>
 
                         </div>

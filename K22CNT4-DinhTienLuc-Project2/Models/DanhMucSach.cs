@@ -20,11 +20,11 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         {
             this.Saches = new HashSet<Sach>();
         }
-        
+    
         public int Id { get; set; }
-        [Required(ErrorMessage ="Hãy nhập tên danh mục:")]    
+        [Required(ErrorMessage ="Hãy nhập tên")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Chọn trạng thái:")]
+        [Required(ErrorMessage = "Hãy chọn trạng thái")]
         public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

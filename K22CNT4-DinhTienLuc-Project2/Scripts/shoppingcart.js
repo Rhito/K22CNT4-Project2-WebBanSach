@@ -74,4 +74,15 @@ function ShowCount() {
     });
 }
 
+function LoadCart() {
+    $.ajax({
+        url: '/Cart/Partial_Item_Cart',
+        type: 'GET',
+        success: function (rs) {
+            $("#load_data").html(rs);
+        }
+    });
+}
+
+
 

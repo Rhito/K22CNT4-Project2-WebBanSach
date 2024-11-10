@@ -61,12 +61,12 @@
                     @Html.HiddenFor(x => x.Id)
                     <!-- your steps content here -->
                     <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        @Html.ValidationMessageFor(x => x.Images, null, new { @class = "text-danger" })
                         <div class="form-group">
                             <label for="txtImgame">Ảnh</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     @Html.TextBoxFor(x => x.Images, new { @id = "txtImgame", @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Images, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="intput-group-append">
                                     <input type="button" class="btn btn-secondary" value="Tải ảnh" onclick="BrowseServer('txtImgame')" />

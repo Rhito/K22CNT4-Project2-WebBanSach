@@ -31,5 +31,7 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         public virtual DbSet<Slide> Slides { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

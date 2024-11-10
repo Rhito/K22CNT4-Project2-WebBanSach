@@ -218,7 +218,6 @@
 
 }
 
-
 .item_product_main .price-box {
     color: var(--Primary-color);
     line-height: 24px;
@@ -233,13 +232,16 @@
 .action-cart button {
     background-color: #fff;
     border-radius: 3px;
-    width: calc(100% - 40px - 10px);
+    width: 100%;
     text-align: center;
     color: #ff6a00;
     align-items: center;
     justify-content: center;
     height: 48px;
     line-height: 1.5;
+}
+.btnAddToCart {
+
 }
 
 .item_blog_base {
@@ -353,12 +355,12 @@
     margin-right: 10px;
 }
 
-.btn-mua button.btn-buy-now {
+ button.btn-buy-now-grid {
     margin-right: 0;
     background: #fff;
     border: solid 1px var(--Primary-color);
     color: var(--Primary-color);
     text-align: center !important;
-    display: block;
+    display: none;
 }
 

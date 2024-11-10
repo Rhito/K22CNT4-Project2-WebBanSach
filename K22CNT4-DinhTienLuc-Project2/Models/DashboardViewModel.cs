@@ -11,5 +11,7 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         public int TotalSach { get; set; }
         public int TotalUsers { get; set; }
         public int TotalSlides { get; set; }
+        public int TotalOrder { get; set; }
+        public int TotalOrderDetails { get; set; }
     }
 }

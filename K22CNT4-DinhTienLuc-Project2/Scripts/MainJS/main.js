@@ -51,5 +51,3 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 // Kích hoạt quan sát cho phần tử header
 headerObserver.observe(header);
-
-

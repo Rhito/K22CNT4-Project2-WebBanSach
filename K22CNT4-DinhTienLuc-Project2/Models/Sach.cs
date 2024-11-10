@@ -19,26 +19,33 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Models
         public Sach()
         {
             this.Carts = new HashSet<Cart>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
         public int Id { get; set; }
-        [Required(ErrorMessage = "Chọn danh mục sách:")]
+        [Required(ErrorMessage ="Hãy chọn danh mục")]
         public int IdDanhMuc { get; set; }
-        [Required(ErrorMessage = "Hãy nhập tên sách:")]
+        [Required(ErrorMessage = "Hãy nhập tên sách")]
+
         public string Name { get; set; }
-        [Required(ErrorMessage = "Hãy nhập số lượng:")]
+        [Required(ErrorMessage = "Hãy nhập số lượng")]
+
         public int Quantity { get; set; }
-        [Required(ErrorMessage = "Hãy nhập giá:")]
+        [Required(ErrorMessage = "Hãy nhập đơn giá")]
+
         public decimal Price { get; set; }
-        [Required(ErrorMessage = "Hãy nhập mô tả:")]
         public string Description { get; set; }
-        [Required(ErrorMessage = "Hãy nhập ảnh:")]
+        [Required(ErrorMessage = "Hãy thêm ảnh")]
+
         public string Images { get; set; }
-        [Required(ErrorMessage = "Hãy chọn trạng thái:")]
+        [Required(ErrorMessage = "Hãy chọn trạng thái")]
+
         public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }
         public virtual DanhMucSach DanhMucSach { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

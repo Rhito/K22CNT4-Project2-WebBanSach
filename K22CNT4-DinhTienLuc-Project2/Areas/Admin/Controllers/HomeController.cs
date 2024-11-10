@@ -20,7 +20,9 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
                     TotalDM = db.DanhMucSaches.Count(),
                     TotalSach = db.Saches.Count(),
                     TotalUsers = db.Users.Count(),
-                    TotalSlides = db.Slides.Count()
+                    TotalSlides = db.Slides.Count(),
+                    TotalOrder = db.Orders.Count(),
+                    TotalOrderDetails = db.OrderDetails.Count(),
                 };
 
                 return View(model);

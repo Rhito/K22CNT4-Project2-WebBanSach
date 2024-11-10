@@ -62,7 +62,7 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
                 var item = db.Saches.Find(id);
                 if (item == null)
                 {
-                    return HttpNotFound();
+                    ModelState.AddModelError("", "Không tìm thấy sản phẩm");
                 }
 
                 // Preselect current category (IdDanhMuc) for the dropdown

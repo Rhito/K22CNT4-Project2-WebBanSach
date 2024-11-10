@@ -21,6 +21,26 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Status" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="110" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="SachId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Sach">
     <Key>
       <PropertyRef Name="Id" />
@@ -86,6 +106,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OrderDetail_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetail_Sach">
+    <End Role="Sach" Type="Self.Sach" Multiplicity="1" />
+    <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="SachId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Sach_DanhMucSach1">
     <End Role="DanhMucSach" Type="Self.DanhMucSach" Multiplicity="1" />
     <End Role="Sach" Type="Self.Sach" Multiplicity="*" />
@@ -101,6 +145,8 @@
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DanhMucSach" EntityType="Self.DanhMucSach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sach" EntityType="Self.Sach" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -112,6 +158,14 @@
     <AssociationSet Name="FK_Cart_User1" Association="Self.FK_Cart_User1">
       <End Role="User" EntitySet="User" />
       <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Order" Association="Self.FK_OrderDetail_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetail_Sach" Association="Self.FK_OrderDetail_Sach">
+      <End Role="Sach" EntitySet="Sach" />
+      <End Role="OrderDetail" EntitySet="OrderDetail" />
     </AssociationSet>
     <AssociationSet Name="FK_Sach_DanhMucSach1" Association="Self.FK_Sach_DanhMucSach1">
       <End Role="DanhMucSach" EntitySet="DanhMucSach" />

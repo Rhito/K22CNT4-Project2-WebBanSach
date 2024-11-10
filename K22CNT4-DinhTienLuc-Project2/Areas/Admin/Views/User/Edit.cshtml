@@ -87,12 +87,12 @@
                     </div>
                     <div class="form-group">
                         <label for="status">Role</label>
-                        @Html.DropDownListFor(x => x.Status, new SelectList(new List<SelectListItem>
+                        @Html.DropDownListFor(x => x.Role, new SelectList(new List<SelectListItem>
                         {
                             new SelectListItem { Text = "Admin", Value = "true" },
                             new SelectListItem { Text = "User normal", Value = "false" }
                         }, "Value", "Text"), "Chọn trạng thái người dùng", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(x => x.Status, null, new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(x => x.Role, null, new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">

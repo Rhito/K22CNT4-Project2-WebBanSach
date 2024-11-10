@@ -1,0 +1,30 @@
+﻿@model IEnumerable<K22CNT4_TTCD1_DinhTienLuc.Models.Cart>
+
+@if (Model != null && Model.Any())
+{
+    <h3>Đơn hàng <span class="float-end">(@Model.Count())</span></h3>
+    var i = 1;
+    var tongtien = decimal.Zero;
+    <table class="table border mt-4">
+        @foreach (var item in Model)
+        {
+            tongtien += item.TotalPrice;
+            
+            <tr>
+                <td><img style="width: 46px;" src="@item.SachImages" /></td>
+                <td>@item.TenSach (@item.Quantity)</td>
+                <td>@item.TotalPrice.ToString("N0")₫</td>
+            </tr>
+        }
+        <tr>
+            <th colspan="2">Tổng tiền:</th>
+            <th>@tongtien.ToString("N0")₫</th>
+        </tr>
+    </table>
+}
+else
+{
+
+}
+
+

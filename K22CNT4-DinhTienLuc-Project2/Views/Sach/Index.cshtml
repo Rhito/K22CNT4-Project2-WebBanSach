@@ -58,6 +58,12 @@
                                     {
                                         <li><a class="dropdown-item" href="#">@user.Name</a></li>
                                         <li>
+                                            @if (user.Role == true)
+                                            {
+                                                <a class="dropdown-item" href="@Url.Action("Index", "Home", new { area = "Admin" })">Dashboard Admin</a>
+                                            }
+                                        </li>
+                                        <li>
                                             <form action="/Sach/DangXuat" method="post">
                                                 <button class="dropdown-item" type="submit">Đăng xuất</button>
                                             </form>
@@ -361,8 +367,8 @@
 </main>
 
 @section scripts {
-<!-- jQuery Script -->
-<script>
+    <!-- jQuery Script -->
+    <script>
     function searchBooks() {
         const query = $('#searchInput').val().trim();
 
@@ -385,5 +391,5 @@
 
     // Bắt sự kiện input để xử lý cả khi bấm nút "X"
     $('#searchInput').on('input', searchBooks);
-</script>
+    </script>
 }

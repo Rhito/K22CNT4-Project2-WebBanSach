@@ -41,6 +41,13 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Kiểm tra email có tồn tại không
+                var existingUser = db.Users.FirstOrDefault(u => u.Email == model.Email);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("Email", "Email này đã được sử dụng.");
+                    return View(model); // Trả lại view với thông báo lỗi
+                }
                 db.Users.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -70,7 +77,12 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
         {
             // Tìm đối tượng sách từ CSDL
             var existingItem = db.Users.Find(model.Id);
-
+            var existingUser = db.Users.FirstOrDefault(u => u.Email == model.Email);
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("Email", "Email này đã được sử dụng.");
+                return View(model); // Trả lại view với thông báo lỗi
+            }
             if (existingItem != null)
             {
                 // Cập nhật các thuộc tính
@@ -85,7 +97,8 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Areas.Admin.Controllers
             }
             else
             {
-                return HttpNotFound();
+                ModelState.AddModelError("", "Lỗi, thêm không thành công");
+                return View(model);
             }
         }
         [HttpPost]

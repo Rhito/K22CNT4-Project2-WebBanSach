@@ -1,0 +1,110 @@
+﻿@model K22CNT4_TTCD1_DinhTienLuc.Models.OrderDetail
+
+@{
+    ViewBag.Title = "Thêm mới Order Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@section naviheader {
+<!-- Left navbar links -->
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="/Admin/Home" role="button"><i class="fas fa-bars"></i></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="/Admin/Home" class="nav-link">Trang chủ</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="/Admin/OrderDetails" class="nav-link">Order Details</a>
+    </li>
+</ul>
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Order Details</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/Admin/Home">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Order Details</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông tin thêm mới</h3>
+        </div>
+        <div class="card-body">
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <div class="bs-stepper-content">
+                @using (Html.BeginForm("Add", "OrderDetails", FormMethod.Post, new { }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <!-- your steps content here -->
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for=" ">Danh mục sách</label>
+                            @Html.DropDownListFor(x => x.OrderId, ViewBag.Order as SelectList, "Chọn người mua hàng", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.OrderId, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for=" ">Danh mục sách</label>
+                            @Html.DropDownListFor(x => x.SachId, ViewBag.Sach as SelectList, "Chọn sách", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.SachId, null, new { @class = "text-danger" })
+                        </div>                     
+                        <div class="form-group">
+                            <label for=" ">Số lượng</label>
+                            @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @placeholder = "Nhập số lượng", type = "number" })
+                            @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
+                        </div>
+                       
+                        <div class="form-group">
+                            <a class="btn btn-danger" href="/Admin/OrderDetails">Quay lại</a>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace('txtDescrip', {
+                customConfig: '/content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+        function BrowseServer(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                document.getElementById(field).value = fileUrl;
+            };
+            finder.popup();
+        }
+    </script>
+}
+
+

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<K22CNT4_TTCD1_DinhTienLuc.Models.Cart>
+<table id="tbl-cart" class="table mb-5">
+    <thead>
+        <tr class="text-center">
+            <th>STT</th>
+            <th>Thông tin sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th class="text-center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            var i = 1;
+            var tongtien = decimal.Zero;
+            foreach (var item in Model)
+            {
+                tongtien += item.TotalPrice;
+                <tr class="text-center" id="trow_@item.IdSach">
+                    <td>@(i++)</td>
+                    <td>
+                        <img width="96" height="147" src="@item.SachImages" />
+                        <a class="fh4" href="/Sach/Details/@item.IdSach">@item.TenSach</a>
+                    </td>
+                    <td>@item.TotalPrice.ToString("N0")₫</td>
+                    <td>
+                        @item.Quantity
+                    </td>
+
+                    <td class="text-center"><a href="#" data-id="@item.IdSach" class="btn btn-sm btn-danger btnDelete">Xóa</a></td>
+                </tr>
+            }
+            <tr id="ThanhToanCD">
+                <th colspan="4"></th>
+                <th  class="text-center">
+                    <div>
+                        <h4 class="d-inline">Tổng:</h4>
+                        <span id="totalPay" class="fh4 d-inline">@tongtien.ToString("N0")₫</span>
+                    </div>
+               
+                    <a class="my-2 btn btn-danger" id="btnDeleteAll" onclick="
+                        var conf = confirm('Bạn có chắc muốn xóa hết sản phẩm trong giỏ hàng?')
+                        if (conf) { window.location.href = '/Cart/DeleteAll';}">Xóa hết</a>
+                    <a href="@Url.Action("CheckOut", "Cart", new { area = "" })" class="my-2 btn btn-success">Thanh Toán</a>
+                </th>
+            </tr>
+        }
+        else
+        {
+            <tr id="empty-cart">
+                <th class="text-center p-5 h3" colspan="5">Không có sản phẩm trong giỏ hàng!!</th>
+            </tr>
+        }
+    </tbody>
+
+</table>

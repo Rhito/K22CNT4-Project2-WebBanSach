@@ -9,16 +9,26 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Controllers
 {
     public class CartController : Controller
     {
+        Entities5 db = new Entities5();
+
         // GET: Cart
         public ActionResult Index()
         {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
             if (cart != null)
             {
-                return View(cart.items);
+                ViewBag.Cart = cart;
             }
-
             return View();
+        }
+        public ActionResult Partial_Item_Cart()
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                return PartialView(cart.items);
+            }
+            return PartialView(new List<Cart>()); // Trả về view trống nếu giỏ hàng null
         }
 
         public ActionResult ShowCount()
@@ -34,7 +44,6 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Controllers
 
             return Json(new { count = totalQuantityInCart }, JsonRequestBehavior.AllowGet);
         }
-
 
         [HttpPost]
         public JsonResult AddToCart(int id, int quantity)
@@ -122,6 +131,98 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Controllers
             return Json(code);
         }
 
+        /*Xoa het tat ca cac san pham trong gio hang*/
+        public ActionResult DeleteAll()
+        {
+            Session["Cart"] = null;
+            return RedirectToAction("Index");
+        }
+
+        /*Checkout - xu ly thanh toan*/
+        public ActionResult CheckOut()
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                ViewBag.Cart = cart;
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CheckOut(Order order)
+        {
+            var code = new { Success = false, Code = -1 };
+            if (ModelState.IsValid)
+            {
+                ShoppingCart cart = (ShoppingCart)Session["Cart"];
+                if (cart != null)
+                {
+                    Order o = new Order
+                    {
+                        CustomerName = order.CustomerName,
+                        Phone = order.Phone,
+                        Address = order.Address,
+                        Email = order.Email,
+                        OrderDetails = new List<OrderDetail>()
+                    };
+
+                    // Tính tổng giá trị của các sản phẩm trong giỏ hàng và thêm OrderDetail
+                    decimal totalPrice = 0;
+                    foreach (var item in cart.items)
+                    {
+                        var orderDetail = new OrderDetail
+                        {
+                            SachId = item.IdSach,
+                            Quantity = item.Quantity,
+                            Price = item.Price
+                        };
+                        o.OrderDetails.Add(orderDetail);
+                        totalPrice += item.Price * item.Quantity;
+
+                        var existingItem = db.Saches.Find(item.IdSach);
+                        if (existingItem != null)
+                        {
+                            // Giảm số lượng trong kho dựa trên số lượng đặt mua
+                            existingItem.Quantity -= item.Quantity;
+                        }
+                    }
+
+                    // Lưu Order và OrderDetails vào database
+                    db.Orders.Add(o);
+                    db.SaveChanges();
+
+                    // Xóa giỏ hàng sau khi đặt hàng thành công
+                    Session["Cart"] = null;
+
+                    // Chuyển hướng đến trang thành công
+                    return RedirectToAction("BuySuccess");
+                }
+            }
+            return View(order); // Trả về view cùng thông báo lỗi nếu không hợp lệ
+        }
+
+
+        public ActionResult BuySuccess ()
+        {
+
+            return View();
+        }
+
+        public ActionResult Partial_Item_CheckOut()
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                return PartialView(cart.items);
+            }
+            return PartialView(new List<Cart>()); // Trả về view trống nếu giỏ hàng null
+        }
+        public ActionResult Partial_CheckOut()
+        {         
+            return PartialView();          
+        }
 
     }
 }
