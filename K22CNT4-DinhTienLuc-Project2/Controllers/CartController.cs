@@ -182,6 +182,11 @@ namespace K22CNT4_TTCD1_DinhTienLuc.Controllers
                         totalPrice += item.Price * item.Quantity;
 
                         var existingItem = db.Saches.Find(item.IdSach);
+                        if (existingItem.Quantity == 0)
+                        {
+                            ModelState.AddModelError("", "Sản phẩm đã hết hàng!");
+                            return View(order); // Trả về view cùng thông báo lỗi nếu không hợp lệ
+                        }
                         if (existingItem != null)
                         {
                             // Giảm số lượng trong kho dựa trên số lượng đặt mua

@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-12 col-lg-5 details-pro">
+            <div class="col-12 col-md-12 col-lg-3 details-pro">
                 <h3 class="title-head">@item.Name</h3>
 
                 <div class="group-action-button">
@@ -114,11 +114,11 @@
                         <div class="price-box clearfix">
 
                             <span class="special-price">
-                                <span class="price product-price">Giá: @item.Price₫</span>
+                                <span class="price product-price">Giá: @item.Price.ToString("N0")₫</span>
                             </span>
                         </div>
                     </div>
-                    <form enctype="multipart/form-data" id="add-to-cart-form" data-cart-form="" action="/cart/add" method="post" class="wishItem">
+                    <form enctype="multipart/form-data" id="add-to-cart-form" data-cart-form="" action="/cart/add" method="post" class="wishItem justify-content-center">
                         <div class="form-product">
 
                             <div class="box-variant clearfix  d-none ">
@@ -126,7 +126,7 @@
                                 <input type="hidden" id="one_variant" name="variantId" value="@item.Id">
 
                             </div>
-                            <div class="clearfix from-action-addcart ">
+                            <div class="clearfix from-action-addcart">
                                 <div class="qty-ant clearfix custom-btn-number ">
                                     <label class="d-none">Số lượng:</label>
                                     <div class="custom custom-btn-numbers clearfix input_number_product">
@@ -141,8 +141,8 @@
                                     <span class="counter-qty">Còn lại @item.Quantity trong kho</span>
                                 </div>
                                 <div class="btn-mua">
-                                    <button type="submit" data-role="addtocart" data-id="@item.Id" class="btn btn-lg btn-gray btn-cart btn_buy btnAddToCart">Thêm vào giỏ hàng</button>
-                                    <button type="button" class="btn btn-lg btn-gray btn_buy btn-buy-now">Mua ngay</button>
+                                    <button type="submit" data-role="addtocart" data-id="@item.Id" class="btn btn-md btn-gray btn-cart btn_buy btnAddToCart">Thêm vào giỏ hàng</button>
+                                    @*<button type="button" class="btn btn-lg btn-gray btn_buy btn-buy-now">Mua ngay</button>*@
                                 </div>
                             </div>
 

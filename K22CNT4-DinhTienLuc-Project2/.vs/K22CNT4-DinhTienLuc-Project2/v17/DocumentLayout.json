@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\views\\user\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\views\\sach\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:views\\sach\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\content\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:content\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\views\\danhmuc\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\views\\danhmuc\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|d:\\thuctapchuyende\\k22cnt4-dinhtienluc-project2\\areas\\admin\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\areas\\admin\\views\\danhmuc\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B2A67447-7393-4A23-901A-E17B98B2CF76}|K22CNT4-DinhTienLuc-Project2.csproj|solutionrelative:areas\\admin\\views\\danhmuc\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEkAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T08:42:52.4Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -44,75 +57,61 @@
               "RelativeDocumentMoniker": "Controllers\\CartController.cs",
               "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Controllers\\CartController.cs",
               "RelativeToolTip": "Controllers\\CartController.cs",
-              "ViewState": "AQIAAMQAAAAAAAAAAAAiwLsAAABDAAAA",
+              "ViewState": "AQIAAKkAAAAAAAAAAADwv7oAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T13:26:31.866Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\User\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\User\\Edit.cshtml",
-              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\User\\Edit.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\User\\Edit.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-10T15:59:34.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAA7wE8AAABUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:51:13.329Z",
+              "WhenOpened": "2024-11-11T08:37:41.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAmwFwAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:16:06.902Z",
+              "Title": "main.css",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Content\\Css\\main.css",
+              "RelativeDocumentMoniker": "Content\\Css\\main.css",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Content\\Css\\main.css",
+              "RelativeToolTip": "Content\\Css\\main.css",
+              "ViewState": "AQIAAFwBAAAAAAAAAAAAAHEBAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-11T08:31:02.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\Sach\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Sach\\Details.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Views\\Sach\\Details.cshtml",
+              "RelativeToolTip": "Views\\Sach\\Details.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAH4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T08:25:25.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "OrderDetailsController.cs",
-              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Controllers\\OrderDetailsController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\OrderDetailsController.cs",
-              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Controllers\\OrderDetailsController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\OrderDetailsController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAowHUAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T15:06:05.526Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\DanhMuc\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\DanhMuc\\Edit.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\DanhMuc\\Edit.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\DanhMuc\\Edit.cshtml",
+              "ViewState": "AQIAADsAAAAAAAAAAAAYwFMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T01:10:53.129Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADIAAAAaAAAA",
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\DanhMuc\\Add.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\DanhMuc\\Add.cshtml",
+              "ToolTip": "D:\\ThucTapChuyenDe\\K22CNT4-DinhTienLuc-Project2\\Areas\\Admin\\Views\\DanhMuc\\Add.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\DanhMuc\\Add.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwFQAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-10T13:41:23.142Z",
+              "WhenOpened": "2024-11-11T01:09:05.2Z",
               "EditorCaption": ""
             }
           ]

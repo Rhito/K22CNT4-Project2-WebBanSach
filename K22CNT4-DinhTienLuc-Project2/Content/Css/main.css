@@ -364,3 +364,8 @@
     display: none;
 }
 
+.btn-cart:hover {
+    background-color: rgb(217, 249, 157);
+    color: #231d1d;
+    transition: ease-in-out 250ms;
+}
