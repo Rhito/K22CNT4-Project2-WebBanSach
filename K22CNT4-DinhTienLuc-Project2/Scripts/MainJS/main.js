@@ -11,7 +11,6 @@ var slider = new Swiper(".mySwiper", {
         delay: 2500,
         disableOnInteraction: true
     }, 
-    
 });
 
 var swiper = new Swiper(".sw", {
@@ -27,11 +26,25 @@ var swiper = new Swiper(".sw", {
         nextEl: ".swiper-button-next", // Nút "Tiếp theo"
         prevEl: ".swiper-button-prev", // Nút "Quay lại"
     },
+    breakpoints: {
+        576: { // Khi màn hình lớn hơn 576px
+            slidesPerView: 2, // Hiển thị 2 slide
+        },
+        768: { // Khi màn hình lớn hơn 768px
+            slidesPerView: 3, // Hiển thị 3 slide
+        },
+        992: { // Khi màn hình lớn hơn 992px
+            slidesPerView: 4, // Hiển thị 4 slide
+        },
+        1200: { // Khi màn hình lớn hơn 1200px
+            slidesPerView: 6, // Hiển thị 6 slide
+        }
+    }
 });
 
 
 /* Sticky header */
-const header = document.querySelector('header');
+/*const header = document.querySelector('header');
 const nav = document.querySelector('.navbar'); // Chọn phần tử .navbar của bạn
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -50,4 +63,4 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 // Kích hoạt quan sát cho phần tử header
-headerObserver.observe(header);
+headerObserver.observe(header);*/

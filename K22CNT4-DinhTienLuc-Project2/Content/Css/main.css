@@ -369,3 +369,8 @@
     color: #231d1d;
     transition: ease-in-out 250ms;
 }
+
+/**/
+#tbl-cart a {
+    text-decoration: none;
+}

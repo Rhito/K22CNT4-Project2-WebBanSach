@@ -1,0 +1,59 @@
+﻿
+
+/* Responsive cho màn hình nhỏ hơn 1200px */
+@media (max-width: 1199px) {
+    .searchInput {
+        width: 300px;
+    }
+
+    .col-login {
+        width: 33%;
+    }
+
+    .item_product_main {
+        width: 32%;
+    }
+}
+
+/* Responsive cho màn hình nhỏ hơn 992px */
+@media (max-width: 991px) {
+    .searchInput {
+        width: 200px;
+    }
+
+    .col-login {
+        width: 50%;
+    }
+
+    .slider {
+        width: 100%;
+    }
+}
+
+/* Responsive cho màn hình nhỏ hơn 768px */
+@media (max-width: 767px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .logo {
+        max-width: 40px;
+    }
+
+    .searchInput {
+        width: 100%;
+    }
+
+    .col-login {
+        width: 100%;
+    }
+
+    .item_product_main {
+        width: 100%;
+        margin: 0;
+    }
+
+    .header-icons {
+        font-size: 1rem;
+    }
+}

@@ -2994,6 +2994,7 @@
     <Content Include="Content\Css\footer.css" />
     <Content Include="Content\Css\header.css" />
     <Content Include="Content\Css\main.css" />
+    <Content Include="Content\Css\Responsive.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
