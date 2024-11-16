@@ -1,0 +1,7 @@
+// Admin
+username: Luc123@gmail.com
+password: 123
+
+// User
+username: l@m.com
+password: 123
